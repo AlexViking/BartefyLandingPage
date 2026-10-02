@@ -2,7 +2,7 @@
   "_note": "Text for the landing page. Edit the values, never the keys. Words in {braces} are placeholders: keep them as they are -- they become a small button or icon (their labels are the matching entries in the same section).",
   "meta": {
     "title": "Bartefy — swap what you don’t use",
-    "description": "Swap the things you don’t use for things you want, with people near you in Tbilisi. No money changes hands. A product of ORZOMI."
+    "description": "Swap things you no longer need for things you want, with people right here in Tbilisi. Zero money involved. A product of ORZOMI."
   },
   "header": {
     "open": "Open Bartefy",
@@ -12,7 +12,7 @@
     "eyebrow": "Tbilisi · Free",
     "title": "Swap what you",
     "titleAccent": "don’t use.",
-    "lead": "Your thing for their thing, with people near you. No money changes hands.",
+    "lead": "Trade your things for their things with people nearby. No money ever changes hands.",
     "start": "Start swapping",
     "howLink": "How it works",
     "point1": "No money, ever",
@@ -22,28 +22,28 @@
   "how": {
     "kicker": "How it works",
     "title": "Three steps from clutter to treasure.",
-    "step1Title": "Put a find on the table",
-    "step1Body": "Photograph something you no longer need. Say what you’d like back.",
-    "step2Title": "Hunt for treasure",
-    "step2Body": "Swipe finds near you, at random. Offer one of yours for what you like.",
+    "step1Title": "Put an item on the table",
+    "step1Body": "Snap a photo of something you no longer need. Let people know what you’d like in return.",
+    "step2Title": "Hunt for hidden treasure",
+    "step2Body": "Swipe through items near you. See something you like? Offer one of yours in exchange.",
     "step3Title": "It’s a bartefy!",
-    "step3Body": "When they say yes, a chat opens. Meet up, swap, and both confirm."
+    "step3Body": "When they accept, a chat opens. Pick a local spot, meet up, and swap."
   },
   "screens": {
     "kicker": "See it",
     "title": "A flea market in your pocket.",
-    "body": "One find at a time, a chat to agree, and everything you’ve put on the table in one place.",
+    "body": "One item at a time, a chat to agree, and everything you’ve put on the table right in one place.",
     "findsTitle": "Your table",
-    "findsBody": "Everything you offer, and what needs you.",
+    "findsBody": "Everything you're offering, and the trade requests waiting for your reply.",
     "discoverTitle": "Discover",
-    "discoverBody": "Finds near you, one card at a time.",
+    "discoverBody": "Treasures near you, one card at a time.",
     "chatTitle": "Agree in the chat",
     "chatBody": "Pick a place and a time, then swap."
   },
   "apps": {
     "kicker": "Apps",
     "title": "Bartefy for iPhone and Android is coming soon.",
-    "body": "We’re building the apps now. You can already use everything at bartefy.com, on any phone or computer.",
+    "body": "We’re building the native apps now, but you can use the full experience today at bartefy.com on any device.",
     "soon": "Soon",
     "comingSoon": "Coming soon",
     "appStoreAlt": "Download on the App Store — coming soon",
@@ -51,7 +51,7 @@
   },
   "install": {
     "title": "Until then, add Bartefy to your home screen",
-    "body": "bartefy.com installs from your browser like an app: its own icon, full screen, quick to open.",
+    "body": "bartefy.com installs directly from your browser like a native app: its own icon, full screen, and quick to open.",
     "iosName": "iPhone · Safari",
     "iosSteps": "Open bartefy.com → tap {share} → {addToHome}",
     "share": "Share",
@@ -65,16 +65,16 @@
   },
   "band": {
     "title": "Your closet is full of treasure.",
-    "body": "Put one thing on the table today. It’s free.",
+    "body": "Put your first item on the table today. It’s completely free.",
     "start": "Start swapping"
   },
   "footer": {
     "productOf": "A product of ORZOMI"
   },
   "images": {
-    "laptop": "Bartefy on a computer: a find card with the swap buttons",
-    "phoneDiscover": "Bartefy on a phone: a find near you",
-    "phoneFinds": "My finds on a phone",
+    "laptop": "Bartefy on a computer: an item card with swap buttons",
+    "phoneDiscover": "Bartefy on a phone: discovering items near you",
+    "phoneFinds": "My table on a phone",
     "phoneChat": "A swap chat on a phone"
   }
 }
