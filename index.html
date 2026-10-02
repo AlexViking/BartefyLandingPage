@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ka">
+<html lang="ka" class="i18n-wait">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -25,6 +25,7 @@
   --ease:cubic-bezier(.2,0,0,1);
 }
 *{box-sizing:border-box}
+.i18n-wait body{visibility:hidden}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body);overflow-x:hidden}
 img{display:block;max-width:100%}
@@ -178,11 +179,11 @@ footer{padding:40px 0 48px;color:var(--slate);font-size:14px}
       <img class="word" src="assets/brand/wordmark-green.png" alt="Bartefy">
     </a>
     <div class="bar-right">
-      <div class="lang" role="group" aria-label="Language">
+      <div class="lang" role="group" aria-label="Language" data-label="header.language">
         <button type="button" data-set-lang="ka" aria-pressed="true">ქარ</button>
         <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a class="btn btn-primary btn-open" href="https://bartefy.com" data-t="open">Open Bartefy</a>
+      <a class="btn btn-primary btn-open" href="https://bartefy.com" data-t="header.open">Open Bartefy</a>
     </div>
   </div>
 </header>
@@ -191,50 +192,50 @@ footer{padding:40px 0 48px;color:var(--slate);font-size:14px}
   <div class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow"><i></i><span data-t="eyebrow">Tbilisi · Free</span></span>
-        <h1 data-t-html="h1">Swap what you <em>don't use.</em></h1>
-        <p class="lead" data-t="lead">Your thing for their thing, with people near you. No money changes hands.</p>
+        <span class="eyebrow"><i></i><span data-t="hero.eyebrow">Tbilisi · Free</span></span>
+        <h1><span data-t="hero.title">Swap what you</span> <em data-t="hero.titleAccent">don’t use.</em></h1>
+        <p class="lead" data-t="hero.lead">Your thing for their thing, with people near you. No money changes hands.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://bartefy.com"><span data-t="start">Start swapping</span><svg class="icon"><use href="#arrow_forward"/></svg></a>
-          <a class="btn btn-ghost" href="#how" data-t="howLink">How it works</a>
+          <a class="btn btn-primary" href="https://bartefy.com"><span data-t="hero.start">Start swapping</span><svg class="icon"><use href="#arrow_forward"/></svg></a>
+          <a class="btn btn-ghost" href="#how" data-t="hero.howLink">How it works</a>
         </div>
         <div class="trust">
-          <span><svg class="icon"><use href="#check_circle"/></svg><span data-t="t1">No money, ever</span></span>
-          <span><svg class="icon"><use href="#check_circle"/></svg><span data-t="t2">Within 10 km</span></span>
-          <span><svg class="icon"><use href="#check_circle"/></svg><span data-t="t3">Free to use</span></span>
+          <span><svg class="icon"><use href="#check_circle"/></svg><span data-t="hero.point1">No money, ever</span></span>
+          <span><svg class="icon"><use href="#check_circle"/></svg><span data-t="hero.point2">Within 10 km</span></span>
+          <span><svg class="icon"><use href="#check_circle"/></svg><span data-t="hero.point3">Free to use</span></span>
         </div>
       </div>
       <div class="devices">
         <div class="laptop float slow">
-          <div class="lid"><div class="screen"><img src="assets/shots/desktop-discover.webp" width="1600" height="1000" alt="" data-alt="altDesk"></div></div>
+          <div class="lid"><div class="screen"><img src="assets/shots/desktop-discover.webp" width="1600" height="1000" alt="" data-alt="images.laptop"></div></div>
           <div class="base"></div>
         </div>
-        <div class="phone float"><div class="island"></div><div class="screen"><div class="status"><span>9:41</span><svg viewBox="0 0 64 16" aria-hidden="true"><g fill="#111"><rect x="0" y="10" width="4" height="6" rx="1"/><rect x="6" y="7" width="4" height="9" rx="1"/><rect x="12" y="4" width="4" height="12" rx="1"/><rect x="18" y="1" width="4" height="15" rx="1"/><path d="M33 13.5a2 2 0 1 0 0 .01zM27.5 9.5a8 8 0 0 1 11 0l-1.6 1.6a5.6 5.6 0 0 0-7.8 0zM24.6 6.6a12 12 0 0 1 16.8 0l-1.6 1.6a9.7 9.7 0 0 0-13.6 0z"/><rect x="45" y="3" width="16" height="10" rx="2.5" fill="none" stroke="#111" stroke-width="1.5"/><rect x="47" y="5" width="11" height="6" rx="1.2"/><rect x="62" y="6" width="1.6" height="4" rx=".8"/></g></svg></div><img src="assets/shots/phone-discover.webp" width="640" height="1385" alt="" data-alt="altPhone"></div></div>
+        <div class="phone float"><div class="island"></div><div class="screen"><div class="status"><span>9:41</span><svg viewBox="0 0 64 16" aria-hidden="true"><g fill="#111"><rect x="0" y="10" width="4" height="6" rx="1"/><rect x="6" y="7" width="4" height="9" rx="1"/><rect x="12" y="4" width="4" height="12" rx="1"/><rect x="18" y="1" width="4" height="15" rx="1"/><path d="M33 13.5a2 2 0 1 0 0 .01zM27.5 9.5a8 8 0 0 1 11 0l-1.6 1.6a5.6 5.6 0 0 0-7.8 0zM24.6 6.6a12 12 0 0 1 16.8 0l-1.6 1.6a9.7 9.7 0 0 0-13.6 0z"/><rect x="45" y="3" width="16" height="10" rx="2.5" fill="none" stroke="#111" stroke-width="1.5"/><rect x="47" y="5" width="11" height="6" rx="1.2"/><rect x="62" y="6" width="1.6" height="4" rx=".8"/></g></svg></div><img src="assets/shots/phone-discover.webp" width="640" height="1385" alt="" data-alt="images.phoneDiscover"></div></div>
       </div>
     </div>
   </div>
 
   <section id="how">
     <div class="wrap">
-      <div class="kicker" data-t="howKicker">How it works</div>
-      <h2 class="sec-title" data-t="howTitle">Three steps from clutter to treasure.</h2>
+      <div class="kicker" data-t="how.kicker">How it works</div>
+      <h2 class="sec-title" data-t="how.title">Three steps from clutter to treasure.</h2>
       <div class="steps">
-        <article class="step"><div class="tile"><svg class="icon"><use href="#table_restaurant"/></svg></div><div class="n">01</div><h3 data-t="s1t">Put a find on the table</h3><p data-t="s1b">Photograph something you no longer need. Say what you'd like back.</p></article>
-        <article class="step"><div class="tile"><svg class="icon"><use href="#style"/></svg></div><div class="n">02</div><h3 data-t="s2t">Hunt for treasure</h3><p data-t="s2b">Swipe finds near you, at random. Offer one of yours for what you like.</p></article>
-        <article class="step"><div class="tile"><svg class="icon"><use href="#handshake"/></svg></div><div class="n">03</div><h3 data-t="s3t">It's a bartefy!</h3><p data-t="s3b">When they say yes, a chat opens. Meet up, swap, and both confirm.</p></article>
+        <article class="step"><div class="tile"><svg class="icon"><use href="#table_restaurant"/></svg></div><div class="n">01</div><h3 data-t="how.step1Title">Put a find on the table</h3><p data-t="how.step1Body">Photograph something you no longer need. Say what you'd like back.</p></article>
+        <article class="step"><div class="tile"><svg class="icon"><use href="#style"/></svg></div><div class="n">02</div><h3 data-t="how.step2Title">Hunt for treasure</h3><p data-t="how.step2Body">Swipe finds near you, at random. Offer one of yours for what you like.</p></article>
+        <article class="step"><div class="tile"><svg class="icon"><use href="#handshake"/></svg></div><div class="n">03</div><h3 data-t="how.step3Title">It's a bartefy!</h3><p data-t="how.step3Body">When they say yes, a chat opens. Meet up, swap, and both confirm.</p></article>
       </div>
     </div>
   </section>
 
   <section class="screens">
     <div class="wrap">
-      <div class="kicker" data-t="seeKicker">See it</div>
-      <h2 class="sec-title" data-t="seeTitle">A flea market in your pocket.</h2>
-      <p class="sec-sub" data-t="seeSub">One find at a time, a chat to agree, and everything you've put on the table in one place.</p>
+      <div class="kicker" data-t="screens.kicker">See it</div>
+      <h2 class="sec-title" data-t="screens.title">A flea market in your pocket.</h2>
+      <p class="sec-sub" data-t="screens.body">One find at a time, a chat to agree, and everything you've put on the table in one place.</p>
       <div class="phones">
-        <figure><div class="phone"><div class="island"></div><div class="screen"><div class="status"><span>9:41</span><svg viewBox="0 0 64 16" aria-hidden="true"><g fill="#111"><rect x="0" y="10" width="4" height="6" rx="1"/><rect x="6" y="7" width="4" height="9" rx="1"/><rect x="12" y="4" width="4" height="12" rx="1"/><rect x="18" y="1" width="4" height="15" rx="1"/><path d="M33 13.5a2 2 0 1 0 0 .01zM27.5 9.5a8 8 0 0 1 11 0l-1.6 1.6a5.6 5.6 0 0 0-7.8 0zM24.6 6.6a12 12 0 0 1 16.8 0l-1.6 1.6a9.7 9.7 0 0 0-13.6 0z"/><rect x="45" y="3" width="16" height="10" rx="2.5" fill="none" stroke="#111" stroke-width="1.5"/><rect x="47" y="5" width="11" height="6" rx="1.2"/><rect x="62" y="6" width="1.6" height="4" rx=".8"/></g></svg></div><img src="assets/shots/phone-finds.webp" width="640" height="1385" loading="lazy" alt="" data-alt="altFinds"></div></div><figcaption><b data-t="c1t">Your table</b><span data-t="c1b">Everything you offer, and what needs you.</span></figcaption></figure>
-        <figure><div class="phone"><div class="island"></div><div class="screen"><div class="status"><span>9:41</span><svg viewBox="0 0 64 16" aria-hidden="true"><g fill="#111"><rect x="0" y="10" width="4" height="6" rx="1"/><rect x="6" y="7" width="4" height="9" rx="1"/><rect x="12" y="4" width="4" height="12" rx="1"/><rect x="18" y="1" width="4" height="15" rx="1"/><path d="M33 13.5a2 2 0 1 0 0 .01zM27.5 9.5a8 8 0 0 1 11 0l-1.6 1.6a5.6 5.6 0 0 0-7.8 0zM24.6 6.6a12 12 0 0 1 16.8 0l-1.6 1.6a9.7 9.7 0 0 0-13.6 0z"/><rect x="45" y="3" width="16" height="10" rx="2.5" fill="none" stroke="#111" stroke-width="1.5"/><rect x="47" y="5" width="11" height="6" rx="1.2"/><rect x="62" y="6" width="1.6" height="4" rx=".8"/></g></svg></div><img src="assets/shots/phone-discover.webp" width="640" height="1385" loading="lazy" alt="" data-alt="altPhone"></div></div><figcaption><b data-t="c2t">Discover</b><span data-t="c2b">Finds near you, one card at a time.</span></figcaption></figure>
-        <figure><div class="phone"><div class="island"></div><div class="screen"><div class="status"><span>9:41</span><svg viewBox="0 0 64 16" aria-hidden="true"><g fill="#111"><rect x="0" y="10" width="4" height="6" rx="1"/><rect x="6" y="7" width="4" height="9" rx="1"/><rect x="12" y="4" width="4" height="12" rx="1"/><rect x="18" y="1" width="4" height="15" rx="1"/><path d="M33 13.5a2 2 0 1 0 0 .01zM27.5 9.5a8 8 0 0 1 11 0l-1.6 1.6a5.6 5.6 0 0 0-7.8 0zM24.6 6.6a12 12 0 0 1 16.8 0l-1.6 1.6a9.7 9.7 0 0 0-13.6 0z"/><rect x="45" y="3" width="16" height="10" rx="2.5" fill="none" stroke="#111" stroke-width="1.5"/><rect x="47" y="5" width="11" height="6" rx="1.2"/><rect x="62" y="6" width="1.6" height="4" rx=".8"/></g></svg></div><img src="assets/shots/phone-chat.webp" width="640" height="1385" loading="lazy" alt="" data-alt="altChat"></div></div><figcaption><b data-t="c3t">Agree in the chat</b><span data-t="c3b">Pick a place and a time, then swap.</span></figcaption></figure>
+        <figure><div class="phone"><div class="island"></div><div class="screen"><div class="status"><span>9:41</span><svg viewBox="0 0 64 16" aria-hidden="true"><g fill="#111"><rect x="0" y="10" width="4" height="6" rx="1"/><rect x="6" y="7" width="4" height="9" rx="1"/><rect x="12" y="4" width="4" height="12" rx="1"/><rect x="18" y="1" width="4" height="15" rx="1"/><path d="M33 13.5a2 2 0 1 0 0 .01zM27.5 9.5a8 8 0 0 1 11 0l-1.6 1.6a5.6 5.6 0 0 0-7.8 0zM24.6 6.6a12 12 0 0 1 16.8 0l-1.6 1.6a9.7 9.7 0 0 0-13.6 0z"/><rect x="45" y="3" width="16" height="10" rx="2.5" fill="none" stroke="#111" stroke-width="1.5"/><rect x="47" y="5" width="11" height="6" rx="1.2"/><rect x="62" y="6" width="1.6" height="4" rx=".8"/></g></svg></div><img src="assets/shots/phone-finds.webp" width="640" height="1385" loading="lazy" alt="" data-alt="images.phoneFinds"></div></div><figcaption><b data-t="screens.findsTitle">Your table</b><span data-t="screens.findsBody">Everything you offer, and what needs you.</span></figcaption></figure>
+        <figure><div class="phone"><div class="island"></div><div class="screen"><div class="status"><span>9:41</span><svg viewBox="0 0 64 16" aria-hidden="true"><g fill="#111"><rect x="0" y="10" width="4" height="6" rx="1"/><rect x="6" y="7" width="4" height="9" rx="1"/><rect x="12" y="4" width="4" height="12" rx="1"/><rect x="18" y="1" width="4" height="15" rx="1"/><path d="M33 13.5a2 2 0 1 0 0 .01zM27.5 9.5a8 8 0 0 1 11 0l-1.6 1.6a5.6 5.6 0 0 0-7.8 0zM24.6 6.6a12 12 0 0 1 16.8 0l-1.6 1.6a9.7 9.7 0 0 0-13.6 0z"/><rect x="45" y="3" width="16" height="10" rx="2.5" fill="none" stroke="#111" stroke-width="1.5"/><rect x="47" y="5" width="11" height="6" rx="1.2"/><rect x="62" y="6" width="1.6" height="4" rx=".8"/></g></svg></div><img src="assets/shots/phone-discover.webp" width="640" height="1385" loading="lazy" alt="" data-alt="images.phoneDiscover"></div></div><figcaption><b data-t="screens.discoverTitle">Discover</b><span data-t="screens.discoverBody">Finds near you, one card at a time.</span></figcaption></figure>
+        <figure><div class="phone"><div class="island"></div><div class="screen"><div class="status"><span>9:41</span><svg viewBox="0 0 64 16" aria-hidden="true"><g fill="#111"><rect x="0" y="10" width="4" height="6" rx="1"/><rect x="6" y="7" width="4" height="9" rx="1"/><rect x="12" y="4" width="4" height="12" rx="1"/><rect x="18" y="1" width="4" height="15" rx="1"/><path d="M33 13.5a2 2 0 1 0 0 .01zM27.5 9.5a8 8 0 0 1 11 0l-1.6 1.6a5.6 5.6 0 0 0-7.8 0zM24.6 6.6a12 12 0 0 1 16.8 0l-1.6 1.6a9.7 9.7 0 0 0-13.6 0z"/><rect x="45" y="3" width="16" height="10" rx="2.5" fill="none" stroke="#111" stroke-width="1.5"/><rect x="47" y="5" width="11" height="6" rx="1.2"/><rect x="62" y="6" width="1.6" height="4" rx=".8"/></g></svg></div><img src="assets/shots/phone-chat.webp" width="640" height="1385" loading="lazy" alt="" data-alt="images.phoneChat"></div></div><figcaption><b data-t="screens.chatTitle">Agree in the chat</b><span data-t="screens.chatBody">Pick a place and a time, then swap.</span></figcaption></figure>
       </div>
     </div>
   </section>
@@ -242,23 +243,23 @@ footer{padding:40px 0 48px;color:var(--slate);font-size:14px}
   <section id="apps">
     <div class="wrap apps">
       <div>
-        <div class="kicker" data-t="appsKicker">Apps</div>
-        <h2 class="sec-title" data-t="appsTitle">Bartefy for iPhone and Android is coming soon.</h2>
-        <p class="sec-sub" data-t="appsSub">We're building the apps now. You can already use everything at bartefy.com, on any phone or computer.</p>
-        <div class="badges" aria-label="Coming soon">
-          <span class="badge-wrap"><span class="soon" data-t="soon">Soon</span><span class="badge"><img src="assets/badges/app-store-en.svg" alt="Download on the App Store — coming soon" width="156" height="52"></span></span>
-          <span class="badge-wrap"><span class="soon" data-t="soon">Soon</span><span class="badge play"><img src="assets/badges/google-play-en.png" alt="Get it on Google Play — coming soon" width="197" height="76"></span></span>
+        <div class="kicker" data-t="apps.kicker">Apps</div>
+        <h2 class="sec-title" data-t="apps.title">Bartefy for iPhone and Android is coming soon.</h2>
+        <p class="sec-sub" data-t="apps.body">We're building the apps now. You can already use everything at bartefy.com, on any phone or computer.</p>
+        <div class="badges" aria-label="Coming soon" data-label="apps.comingSoon">
+          <span class="badge-wrap"><span class="soon" data-t="apps.soon">Soon</span><span class="badge"><img src="assets/badges/app-store-en.svg" data-alt="apps.appStoreAlt" alt="Download on the App Store — coming soon" width="156" height="52"></span></span>
+          <span class="badge-wrap"><span class="soon" data-t="apps.soon">Soon</span><span class="badge play"><img src="assets/badges/google-play-en.png" data-alt="apps.googlePlayAlt" alt="Get it on Google Play — coming soon" width="197" height="76"></span></span>
         </div>
       </div>
       <div class="install">
-        <h3 data-t="instTitle">Until then, add Bartefy to your home screen</h3>
-        <p data-t="instSub">bartefy.com installs from your browser like an app: its own icon, full screen, quick to open.</p>
+        <h3 data-t="install.title">Until then, add Bartefy to your home screen</h3>
+        <p data-t="install.body">bartefy.com installs from your browser like an app: its own icon, full screen, quick to open.</p>
         <ul class="how">
-          <li><span class="tile"><svg class="icon"><use href="#phone_iphone"/></svg></span><div><b>iPhone · Safari</b><span data-t-html="iosHow">Open bartefy.com → tap <span class="k"><svg class="icon"><use href="#ios_share"/></svg>Share</span> → <span class="k">Add to Home Screen</span></span></div></li>
-          <li><span class="tile"><svg class="icon"><use href="#android"/></svg></span><div><b>Android · Chrome</b><span data-t-html="androidHow">Open bartefy.com → tap <span class="k"><svg class="icon"><use href="#more_vert"/></svg></span> → <span class="k">Install app</span></span></div></li>
-          <li><span class="tile"><svg class="icon"><use href="#laptop_mac"/></svg></span><div><b data-t="pcName">Computer · Chrome or Edge</b><span data-t-html="pcHow">Open bartefy.com → click <span class="k"><svg class="icon"><use href="#install_desktop"/></svg></span> in the address bar</span></div></li>
+          <li><span class="tile"><svg class="icon"><use href="#phone_iphone"/></svg></span><div><b data-t="install.iosName">iPhone · Safari</b><span data-steps="install.iosSteps">Open bartefy.com → tap <span class="k"><svg class="icon"><use href="#ios_share"/></svg>Share</span> → <span class="k">Add to Home Screen</span></span></div></li>
+          <li><span class="tile"><svg class="icon"><use href="#android"/></svg></span><div><b data-t="install.androidName">Android · Chrome</b><span data-steps="install.androidSteps">Open bartefy.com → tap <span class="k"><svg class="icon"><use href="#more_vert"/></svg></span> → <span class="k">Install app</span></span></div></li>
+          <li><span class="tile"><svg class="icon"><use href="#laptop_mac"/></svg></span><div><b data-t="install.computerName">Computer · Chrome or Edge</b><span data-steps="install.computerSteps">Open bartefy.com → click <span class="k"><svg class="icon"><use href="#install_desktop"/></svg></span> in the address bar</span></div></li>
         </ul>
-        <a class="btn btn-primary" href="https://bartefy.com"><span data-t="openSite">Open bartefy.com</span><svg class="icon"><use href="#open_in_new"/></svg></a>
+        <a class="btn btn-primary" href="https://bartefy.com"><span data-t="install.open">Open bartefy.com</span><svg class="icon"><use href="#open_in_new"/></svg></a>
       </div>
     </div>
   </section>
@@ -267,10 +268,10 @@ footer{padding:40px 0 48px;color:var(--slate);font-size:14px}
     <div class="wrap">
       <div class="band">
         <div>
-          <h2 data-t="bandTitle">Your closet is full of treasure.</h2>
-          <p data-t="bandSub">Put one thing on the table today. It's free.</p>
+          <h2 data-t="band.title">Your closet is full of treasure.</h2>
+          <p data-t="band.body">Put one thing on the table today. It's free.</p>
         </div>
-        <a class="btn btn-light" href="https://bartefy.com"><span data-t="start">Start swapping</span><svg class="icon"><use href="#arrow_forward"/></svg></a>
+        <a class="btn btn-light" href="https://bartefy.com"><span data-t="band.start">Start swapping</span><svg class="icon"><use href="#arrow_forward"/></svg></a>
       </div>
     </div>
   </section>
@@ -280,7 +281,7 @@ footer{padding:40px 0 48px;color:var(--slate);font-size:14px}
   <div class="wrap foot">
     <a class="orzomi" href="https://orzomi.com" target="_blank" rel="noopener noreferrer">
       <svg viewBox="64 94 476 754" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M540 94v754h-476v-754zm-454 22v710h432v-710z M306.6 298.8c0-49.62-40.18-89.8-89.8-89.8-49.62 0-89.8 40.18-89.8 89.8 0 49.62 40.18 89.8 89.8 89.8 49.62 0 89.8-40.18 89.8-89.8zm-20.32 0c0 38.34-31.14 69.48-69.48 69.48-38.35 0-69.48-31.14-69.48-69.48 0-38.35 31.13-69.48 69.48-69.48 38.34 0 69.48 31.13 69.48 69.48z M339 243h54.51c24.05 0 37.68 13.5 37.68 35.1 0 14.39-8.82 26.09-24.05 30.59l28.86 45h-22.45l-27.25-42.3h-28.86v42.3h-18.44zm18.44 49.49h32.87c13.62 0 21.64-5.4 21.64-15.3 0-9.9-8.02-15.3-21.64-15.3h-32.87z M172.03 416h88.94v16.15l-63.67 75.09h66.7v17.76h-95v-16.15l63.67-75.09h-60.64z M477.8 470.8c0-49.62-40.18-89.8-89.8-89.8-49.62 0-89.8 40.18-89.8 89.8 0 49.62 40.18 89.8 89.8 89.8 49.62 0 89.8-40.18 89.8-89.8zm-20.32 0c0 38.34-31.14 69.48-69.48 69.48-38.34 0-69.48-31.14-69.48-69.48 0-38.35 31.14-69.48 69.48-69.48 38.34 0 69.48 31.13 69.48 69.48z M154 591h18.58l44.42 70.4 43.42-70.4h19.58v110.4h-22.35v-72l-34.5 59.6h-12.3l-34.5-59.6v72h-22.35z M399 591v111h-23v-111z"/></svg>
-      <span data-t="productOf">A product of ORZOMI</span>
+      <span data-t="footer.productOf">A product of ORZOMI</span>
     </a>
     <nav>
       <a href="https://bartefy.com">bartefy.com</a>
@@ -291,83 +292,52 @@ footer{padding:40px 0 48px;color:var(--slate);font-size:14px}
 
 <script>
 (() => {
-  const T = {
-    en: {
-      open: 'Open Bartefy', eyebrow: 'Tbilisi · Free', h1: 'Swap what you <em>don’t use.</em>',
-      lead: 'Your thing for their thing, with people near you. No money changes hands.',
-      start: 'Start swapping', howLink: 'How it works', t1: 'No money, ever', t2: 'Within 10 km', t3: 'Free to use',
-      howKicker: 'How it works', howTitle: 'Three steps from clutter to treasure.',
-      s1t: 'Put a find on the table', s1b: 'Photograph something you no longer need. Say what you’d like back.',
-      s2t: 'Hunt for treasure', s2b: 'Swipe finds near you, at random. Offer one of yours for what you like.',
-      s3t: 'It’s a bartefy!', s3b: 'When they say yes, a chat opens. Meet up, swap, and both confirm.',
-      seeKicker: 'See it', seeTitle: 'A flea market in your pocket.',
-      seeSub: 'One find at a time, a chat to agree, and everything you’ve put on the table in one place.',
-      c1t: 'Your table', c1b: 'Everything you offer, and what needs you.',
-      c2t: 'Discover', c2b: 'Finds near you, one card at a time.',
-      c3t: 'Agree in the chat', c3b: 'Pick a place and a time, then swap.',
-      appsKicker: 'Apps', appsTitle: 'Bartefy for iPhone and Android is coming soon.',
-      appsSub: 'We’re building the apps now. You can already use everything at bartefy.com, on any phone or computer.',
-      soon: 'Soon', instTitle: 'Until then, add Bartefy to your home screen',
-      instSub: 'bartefy.com installs from your browser like an app: its own icon, full screen, quick to open.',
-      iosHow: 'Open bartefy.com → tap <span class="k"><svg class="icon"><use href="#ios_share"/></svg>Share</span> → <span class="k">Add to Home Screen</span>',
-      androidHow: 'Open bartefy.com → tap <span class="k"><svg class="icon"><use href="#more_vert"/></svg></span> → <span class="k">Install app</span>',
-      pcName: 'Computer · Chrome or Edge',
-      pcHow: 'Open bartefy.com → click <span class="k"><svg class="icon"><use href="#install_desktop"/></svg></span> in the address bar',
-      openSite: 'Open bartefy.com', bandTitle: 'Your closet is full of treasure.', bandSub: 'Put one thing on the table today. It’s free.',
-      productOf: 'A product of ORZOMI',
-      altDesk: 'Bartefy on a computer: a find card with the swap buttons', altPhone: 'Bartefy on a phone: a find near you',
-      altFinds: 'My finds on a phone', altChat: 'A swap chat on a phone',
-      title: 'Bartefy — swap what you don’t use',
-    },
-    ka: {
-      open: 'გახსენი Bartefy', eyebrow: 'თბილისი · უფასოდ', h1: 'გაცვალე ის, რასაც <em>აღარ იყენებ.</em>',
-      lead: 'შენი ნივთი — სხვის ნივთზე, ახლომახლო ხალხთან. ფული არ ტრიალებს.',
-      start: 'დაიწყე გაცვლა', howLink: 'როგორ მუშაობს', t1: 'ფულის გარეშე', t2: '10 კმ-ის რადიუსში', t3: 'უფასოა',
-      howKicker: 'როგორ მუშაობს', howTitle: 'სამი ნაბიჯი ძველი ნივთიდან განძამდე.',
-      s1t: 'დადე ნივთი მაგიდაზე', s1b: 'გადაუღე ფოტო იმას, რაც აღარ გჭირდება, და დაწერე, რას ისურვებდი სანაცვლოდ.',
-      s2t: 'მოძებნე განძი', s2b: 'გადაფურცლე ახლომახლო ნივთები. რაც მოგეწონება, შესთავაზე შენი ნივთი სანაცვლოდ.',
-      s3t: 'ეს Bartefy-ა!', s3b: 'როცა დაგთანხმდებიან, ჩატი იხსნება. შეხვდით, გაცვალეთ და ორივემ დაადასტურეთ.',
-      seeKicker: 'ნახე', seeTitle: 'ბაზრობა შენს ჯიბეში.',
-      seeSub: 'ერთ ჯერზე ერთი ნივთი, ჩატი შესათანხმებლად და ყველაფერი, რაც მაგიდაზე დადე — ერთ ადგილას.',
-      c1t: 'შენი მაგიდა', c1b: 'ყველაფერი, რასაც სთავაზობ, და რა გელოდება.',
-      c2t: 'აღმოაჩინე', c2b: 'ახლომახლო ნივთები, თითო ბარათად.',
-      c3t: 'შეთანხმდით ჩატში', c3b: 'აირჩიეთ ადგილი და დრო, მერე კი გაცვალეთ.',
-      appsKicker: 'აპლიკაციები', appsTitle: 'Bartefy iPhone-სა და Android-ზე მალე.',
-      appsSub: 'აპლიკაციებზე ახლა ვმუშაობთ. ყველაფრის გამოყენება უკვე შეგიძლია bartefy.com-ზე — ნებისმიერ ტელეფონსა თუ კომპიუტერზე.',
-      soon: 'მალე', instTitle: 'მანამდე დაამატე Bartefy მთავარ ეკრანზე',
-      instSub: 'bartefy.com ბრაუზერიდან აპლიკაციასავით ინსტალირდება: საკუთარი ხატულა, სრული ეკრანი, სწრაფი გახსნა.',
-      iosHow: 'გახსენი bartefy.com → შეეხე <span class="k"><svg class="icon"><use href="#ios_share"/></svg>გაზიარებას</span> → <span class="k">მთავარ ეკრანზე დამატება</span>',
-      androidHow: 'გახსენი bartefy.com → შეეხე <span class="k"><svg class="icon"><use href="#more_vert"/></svg></span> → <span class="k">აპის ინსტალაცია</span>',
-      pcName: 'კომპიუტერი · Chrome ან Edge',
-      pcHow: 'გახსენი bartefy.com → დააჭირე <span class="k"><svg class="icon"><use href="#install_desktop"/></svg></span> მისამართის ზოლში',
-      openSite: 'გახსენი bartefy.com', bandTitle: 'შენი კარადა სავსეა განძით.', bandSub: 'დადე ერთი ნივთი მაგიდაზე დღესვე. უფასოა.',
-      productOf: 'ORZOMI-ს პროდუქტი',
-      altDesk: 'Bartefy კომპიუტერზე: ნივთის ბარათი და გაცვლის ღილაკები', altPhone: 'Bartefy ტელეფონზე: ახლომახლო ნივთი',
-      altFinds: 'ჩემი ნივთები ტელეფონზე', altChat: 'გაცვლის ჩატი ტელეფონზე',
-      title: 'Bartefy — გაცვალე ის, რასაც აღარ იყენებ',
-    },
-  }
+  /* All words live in i18n/en.json and i18n/ka.json -- edit them there.
+     The English in this file is only a fallback if a file cannot load. */
   const KEY = 'bartefy.landing.lang'
+  const root = document.documentElement
+  const get = (obj, path) => path.split('.').reduce((o, k) => (o == null ? o : o[k]), obj)
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
+  const icon = (id) => `<svg class="icon"><use href="#${id}"/></svg>`
+  // The {placeholders} in the install steps: a small key-cap, with an icon
+  // and/or the label from the same section.
+  const chips = (T) => ({
+    share: `<span class="k">${icon('ios_share')}${esc(get(T, 'install.share'))}</span>`,
+    addToHome: `<span class="k">${esc(get(T, 'install.addToHome'))}</span>`,
+    menu: `<span class="k">${icon('more_vert')}</span>`,
+    installApp: `<span class="k">${esc(get(T, 'install.installApp'))}</span>`,
+    installIcon: `<span class="k">${icon('install_desktop')}</span>`,
+  })
+  const cache = {}
+  const load = (lang) => cache[lang] || (cache[lang] = fetch(`i18n/${lang}.json`).then((r) => { if (!r.ok) throw new Error(r.status); return r.json() }))
   const pick = () => {
     try { const s = localStorage.getItem(KEY); if (s === 'en' || s === 'ka') return s } catch (e) {}
     // The .ge domains and Georgian browsers open in Georgian; others in English.
     if (/\.ge$/i.test(location.hostname)) return 'ka'
     return /^ka\b/i.test(navigator.language || '') ? 'ka' : 'en'
   }
-  const apply = (lang) => {
-    const t = T[lang]
-    document.documentElement.lang = lang
-    document.title = t.title
-    document.querySelectorAll('[data-t]').forEach((el) => { const v = t[el.dataset.t]; if (v != null) el.textContent = v })
-    document.querySelectorAll('[data-t-html]').forEach((el) => { const v = t[el.dataset.tHtml]; if (v != null) el.innerHTML = v })
-    document.querySelectorAll('[data-alt]').forEach((el) => { const v = t[el.dataset.alt]; if (v != null) el.alt = v })
+  const apply = (lang, T) => {
+    root.lang = lang
+    if (get(T, 'meta.title')) document.title = get(T, 'meta.title')
+    const d = document.querySelector('meta[name=description]'); if (d && get(T, 'meta.description')) d.content = get(T, 'meta.description')
+    document.querySelectorAll('[data-t]').forEach((el) => { const v = get(T, el.dataset.t); if (typeof v === 'string') el.textContent = v })
+    document.querySelectorAll('[data-alt]').forEach((el) => { const v = get(T, el.dataset.alt); if (typeof v === 'string') el.alt = v })
+    document.querySelectorAll('[data-label]').forEach((el) => { const v = get(T, el.dataset.label); if (typeof v === 'string') el.setAttribute('aria-label', v) })
+    const c = chips(T)
+    document.querySelectorAll('[data-steps]').forEach((el) => {
+      const v = get(T, el.dataset.steps)
+      if (typeof v === 'string') el.innerHTML = esc(v).replace(/\{(\w+)\}/g, (m, k) => c[k] ?? m)
+    })
     document.querySelectorAll('[data-set-lang]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)))
   }
+  const show = () => root.classList.remove('i18n-wait')
+  const use = (lang) => load(lang).then((T) => apply(lang, T)).catch(() => {}).finally(show)
   document.querySelectorAll('[data-set-lang]').forEach((b) => b.addEventListener('click', () => {
     try { localStorage.setItem(KEY, b.dataset.setLang) } catch (e) {}
-    apply(b.dataset.setLang)
+    use(b.dataset.setLang)
   }))
-  apply(pick())
+  setTimeout(show, 900) // never stay hidden if a file is slow
+  use(pick())
 })()
 </script>
 </body>

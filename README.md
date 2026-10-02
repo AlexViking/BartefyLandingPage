@@ -4,7 +4,12 @@ The page for **bartefy.ge** and **bartefy.com.ge**: what Bartefy is, a way to
 the app at **bartefy.com**, apps coming soon, and how to install the web app
 meanwhile. A product of ORZOMI.
 
-- One static page: `index.html` (styles, icons and the language switch are inline).
+- One static page: `index.html` (styles and icons inline).
+- **All the words are in `i18n/en.json` (English) and `i18n/ka.json`
+  (Georgian; `ka` is Georgian's language code).** Edit the values, never the
+  keys. Words in `{braces}` are placeholders for a small button or icon --
+  keep them; their labels are entries in the same section. Both files must
+  keep the same keys. The English inside `index.html` is only a fallback.
 - Georgian and English. It opens in Georgian on a `.ge` domain or a Georgian
   browser, otherwise English; the ქარ / EN switch is remembered.
 - Screenshots in `assets/shots/` are the real app with demo content (demo
