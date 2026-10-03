@@ -406,7 +406,9 @@ footer{padding:40px 0 48px;color:var(--slate);font-size:14px}
     const device = /iPad|Tablet/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) || (/Android/.test(ua) && !/Mobile/.test(ua))
       ? 'tablet' : /Mobi|iPhone|Android/.test(ua) ? 'mobile' : 'desktop'
 
-    fetch('https://cjsugsbqtwsvdsfpdqmy.supabase.co/rest/v1/page_views', {
+    // Only once the page is on screen: a preloaded copy nobody looks at
+    // (Safari's address-bar preload, Chrome's prerender) must not count.
+    const send = () => fetch('https://cjsugsbqtwsvdsfpdqmy.supabase.co/rest/v1/page_views', {
       method: 'POST',
       keepalive: true,
       headers: {
@@ -428,6 +430,11 @@ footer{padding:40px 0 48px;color:var(--slate);font-size:14px}
         lang: (navigator.language || '').slice(0, 16) || null,
       }),
     }).catch(() => {})
+    if (document.visibilityState === 'visible') send()
+    else {
+      const go = () => { if (document.visibilityState !== 'visible') return; document.removeEventListener('visibilitychange', go); send() }
+      document.addEventListener('visibilitychange', go)
+    }
   } catch (e) { /* counting must never break the page */ }
 })()
 </script>
