@@ -340,5 +340,96 @@ footer{padding:40px 0 48px;color:var(--slate);font-size:14px}
   use(pick())
 })()
 </script>
+<script>
+/* Visitor counting for bartefy.ge and bartefy.com.ge. The numbers appear in
+   the Visitors tab at bartefy.com/admin/analytics; the app has the same logic
+   in client/src/lib/pageViews.ts. No cookies, no IP address: a random id in
+   localStorage, the referring site, the time zone's country, phone or computer.
+   bartefy.com.ge forwards here as /?from=com.ge, which is how it is told apart.
+   Open /?notrack=1 once on your own devices so your visits are not counted. */
+(() => {
+  try {
+    const q = new URLSearchParams(location.search)
+    let site = /(^|\.)bartefy\.com\.ge$/i.test(location.hostname) ? 'bartefy.com.ge'
+      : /(^|\.)bartefy\.ge$/i.test(location.hostname) ? 'bartefy.ge' : null
+    if (q.get('from') === 'com.ge') site = 'bartefy.com.ge'
+    if (q.get('notrack') === '1') { try { localStorage.setItem('bartefy.notrack', '1') } catch (e) {} }
+    // Tidy the address bar: these two only matter for this one load.
+    if (q.has('from') || q.has('notrack')) {
+      q.delete('from'); q.delete('notrack')
+      history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q : '') + location.hash)
+    }
+    let off = false
+    try { off = localStorage.getItem('bartefy.notrack') === '1' } catch (e) {}
+    if (!site || off || navigator.webdriver) return
+
+    const uuid = () => crypto.randomUUID ? crypto.randomUUID()
+      : '10000000-1000-4000-8000-100000000000'.replace(/[018]/g, (c) => (c ^ (Math.random() * 16) >> (c / 4)).toString(16))
+    const stored = (store, key) => {
+      try { let v = store.getItem(key); if (v) return [v, false]; v = uuid(); store.setItem(key, v); return [v, true] }
+      catch (e) { return [uuid(), true] }
+    }
+    const [visitor] = stored(localStorage, 'bartefy.visitor')
+    const [session, first] = stored(sessionStorage, 'bartefy.visit')
+
+    const source = (ref) => {
+      if (!ref) return null
+      let h; try { const u = new URL(ref); h = (u.protocol === 'android-app:' ? u.host : u.hostname).toLowerCase().replace(/^www\./, '') } catch (e) { return null }
+      if (/(^|\.)google\.|googlequicksearchbox/.test(h)) return 'google'
+      if (/(^|\.)facebook\.com$|^fb\.me$/.test(h)) return 'facebook'
+      if (/(^|\.)instagram\.com$/.test(h)) return 'instagram'
+      if (/(^|\.)t\.co$|(^|\.)x\.com$|(^|\.)twitter\.com$/.test(h)) return 'x'
+      if (/(^|\.)bing\.com$/.test(h)) return 'bing'
+      if (/(^|\.)yandex\./.test(h)) return 'yandex'
+      if (/(^|\.)linkedin\.com$|^lnkd\.in$/.test(h)) return 'linkedin'
+      if (/(^|\.)tiktok\.com$/.test(h)) return 'tiktok'
+      if (/telegram|^t\.me$/.test(h)) return 'telegram'
+      return h === location.hostname.replace(/^www\./, '') ? null : h.slice(0, 120)
+    }
+    const TZ = {
+      'Asia/Tbilisi':'GE','Europe/Moscow':'RU','Europe/Kiev':'UA','Europe/Kyiv':'UA','Asia/Yerevan':'AM','Asia/Baku':'AZ',
+      'Europe/Istanbul':'TR','Asia/Istanbul':'TR','Europe/Berlin':'DE','Europe/London':'GB','Europe/Paris':'FR','Europe/Madrid':'ES',
+      'Europe/Rome':'IT','Europe/Amsterdam':'NL','Europe/Brussels':'BE','Europe/Vienna':'AT','Europe/Zurich':'CH','Europe/Warsaw':'PL',
+      'Europe/Prague':'CZ','Europe/Riga':'LV','Europe/Vilnius':'LT','Europe/Tallinn':'EE','Europe/Stockholm':'SE','Europe/Oslo':'NO',
+      'Europe/Copenhagen':'DK','Europe/Helsinki':'FI','Europe/Dublin':'IE','Europe/Lisbon':'PT','Europe/Athens':'GR','Europe/Bucharest':'RO',
+      'Europe/Sofia':'BG','Europe/Budapest':'HU','Europe/Minsk':'BY','Europe/Chisinau':'MD','Asia/Jerusalem':'IL','Asia/Dubai':'AE',
+      'Asia/Tehran':'IR','Asia/Almaty':'KZ','Asia/Tashkent':'UZ','Asia/Kolkata':'IN','Asia/Calcutta':'IN','Asia/Shanghai':'CN',
+      'Asia/Tokyo':'JP','Asia/Seoul':'KR','Asia/Singapore':'SG','Asia/Riyadh':'SA','Asia/Qatar':'QA','Africa/Cairo':'EG',
+      'Australia/Sydney':'AU','Australia/Melbourne':'AU','America/New_York':'US','America/Chicago':'US','America/Denver':'US',
+      'America/Los_Angeles':'US','America/Phoenix':'US','America/Toronto':'CA','America/Vancouver':'CA','America/Sao_Paulo':'BR',
+      'America/Mexico_City':'MX'
+    }
+    let country = null
+    try { country = TZ[Intl.DateTimeFormat().resolvedOptions().timeZone] || null } catch (e) {}
+    if (!country) { const r = (navigator.language || '').split('-')[1]; if (r && /^[A-Za-z]{2}$/.test(r)) country = r.toUpperCase() }
+    const ua = navigator.userAgent
+    const device = /iPad|Tablet/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) || (/Android/.test(ua) && !/Mobile/.test(ua))
+      ? 'tablet' : /Mobi|iPhone|Android/.test(ua) ? 'mobile' : 'desktop'
+
+    fetch('https://cjsugsbqtwsvdsfpdqmy.supabase.co/rest/v1/page_views', {
+      method: 'POST',
+      keepalive: true,
+      headers: {
+        // The public (publishable) key -- the same one bartefy.com ships.
+        apikey: 'sb_publishable_J0YhgDgl4Kaj642a6WQcYA_vOY2CmTa',
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify({
+        site,
+        path: (location.pathname || '/').slice(0, 200),
+        visitor_id: visitor,
+        session_id: session,
+        referrer_host: first ? source(document.referrer) : null,
+        utm_source: first ? (q.get('utm_source') || '').slice(0, 64) || null : null,
+        utm_campaign: first ? (q.get('utm_campaign') || '').slice(0, 64) || null : null,
+        country,
+        device,
+        lang: (navigator.language || '').slice(0, 16) || null,
+      }),
+    }).catch(() => {})
+  } catch (e) { /* counting must never break the page */ }
+})()
+</script>
 </body>
 </html>
